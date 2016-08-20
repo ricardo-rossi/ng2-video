@@ -1,9 +1,8 @@
-<div>
-    <div>
-        <video id="videoDisplay"
-            src="{{videoService.currentPath}}"
-            width="500px" height="500px" controls>
-        </video>
-    </div>
+<div id="videoPlayer">
+    <video id="videoDisplay"
+        src="{{videoService.currentPath}}"
+        width="500px">
+    </video>
     <video-controls></video-controls>
+    <div id="videoTitle">{{videoService.currentTitle}}</div>
 </div>

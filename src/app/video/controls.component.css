@@ -1,4 +1,38 @@
-.video-controls {
-    background-color:#000;
-    height: 30px;
+#playerControls {
+    height: 32px;
+    padding: 2px;
+    font-family: arial;
+    font-size: 12px;
+    /*padding-left: 6px;  */
+    padding: 0 6px 0 6px;  
+}
+
+#playerControls a {
+    font-size: 1.4rem;
+    color: #b8b8bb;
+    cursor: pointer;
+}
+
+#playerControls .btn {
+    border-radius:0px;
+    width:50px;
+}
+
+#playerControls .btn:focus {
+    border: none;
+    box-shadow: 0;
+    outline: 0 none;
+}
+
+#playControl {
+    float: left;
+}
+
+#volumeControl {
+    float: right;
+}
+
+#volumeControl a i {
+    width: 20px;
+    text-align: center;
 }

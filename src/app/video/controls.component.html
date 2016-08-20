@@ -1,4 +1,21 @@
-<div id="playerControls" class="video-controls">
-    <span id="videoTime">{{videoService.currentTime | timeDisplay}} / {{videoService.totalTime | timeDisplay}}</span>
-    <span>[ {{videoService.percentComplete | percent}} ]</span>
+<div id="playerControls">
+    <div id="playControl">
+        <a id="playBtn" class="btn btn-default" (click)="videoService.playVideo()">
+            <i [ngClass]="{'fa-play': !videoService.isPlaying, 'fa-pause': videoService.isPlaying}" class="fa"></i>
+        </a>    
+        <span id="videoTime">
+            {{videoService.currentTime | timeDisplay}} / 
+            {{videoService.totalTime | timeDisplay}}
+            [{{videoService.percentComplete | percent:'1.0-0'}}]
+        </span>
+    </div>
+    <div id="volumeControl">    
+        <!--<a><i class="fa fa-volume-off"></i></a>
+        <a><i class="fa fa-volume-down"></i></a>
+        <a><i class="fa fa-volume-up"></i></a>-->
+
+        <a id="muteBtn" class="btn btn-default" (click)="videoService.muteVideo()">        
+            <i [ngClass]="{'fa-volume-off': videoService.isMuted, 'fa-volume-up': !videoService.isMuted}" class="fa"></i>
+        </a>
+    </div>
 </div>

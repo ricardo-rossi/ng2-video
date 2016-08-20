@@ -1,0 +1,17 @@
+#videoPlayer {
+    display: inline-block;
+    background-color: #000;
+}
+
+#videoTitle {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 1.1em;
+    font-family: arial;
+    color: whitesmoke;
+    width: 100%;
+    margin: 5px;
+    margin-left: 6px;
+    text-shadow: 1px 1px #333333;
+}
