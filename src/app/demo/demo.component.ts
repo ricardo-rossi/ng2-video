@@ -16,7 +16,7 @@ export class VideoDemoComponent {
      * Setting defaults for the demo 
      */
     _videoTitle: string = 'Big Buck Bunny';
-    _videoUrl: string = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
+    _videoUrl: string = 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
     _videoWidth: string = '100%';
     _targetPercent: number = 20.00;
     eventMessage: string = '';

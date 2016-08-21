@@ -4,9 +4,7 @@
             <i [ngClass]="{'fa-play': !videoService.isPlaying, 'fa-pause': videoService.isPlaying}" class="fa"></i>
         </a>    
         <span id="videoTime">
-            {{videoService.currentTime | timeDisplay}} / 
-            {{videoService.totalTime | timeDisplay}}
-            [{{videoService.percentComplete | percent:'1.0-0'}}]
+            {{videoService.currentTime | timeDisplay}} / {{videoService.totalTime | timeDisplay}}
         </span>
     </div>
     <div id="volumeControl">    
