@@ -13,12 +13,20 @@ import { VideoComponent } from '../video/';
 })
 export class VideoDemoComponent {
     /**
-     * Setting defaults for the demo 
+     * Setting default values for the demo 
      */
-    _videoTitle: string = 'Big Buck Bunny';
-    _videoUrl: string = 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
-    _videoWidth: string = '100%';
-    _targetPercent: number = 20.00;
+
+    // The title of the video to be displayed on the header
+    @Input() videoTitle: string = 'Big Buck Bunny';
+
+    // The url link to the video (absulute or relating)
+    @Input() videoUrl: string = 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
+
+    // The width of the video player area
+    @Input() videoWidth: string = '100%';
+
+    // target percentage to be triggered is reached
+    @Input() targetPercent: number = 20.00;
     eventMessage: string = '';
 
     /**
@@ -26,51 +34,6 @@ export class VideoDemoComponent {
      */
     onTargetComplete(): void {
         // Do something useful        
-        this.eventMessage = `Hey! Target Reached! The Target was ${this._targetPercent}%`;
+        this.eventMessage = `Hey! Target Reached! The Target was ${this.targetPercent}%`;
     }
-
-    /**
-     * The title of the video to be displayed on the header
-     */
-    @Input()
-    set videoTitle(title: string) {
-        this._videoTitle = title;
-    }
-    get videoTitle(): string {
-        return this._videoTitle;
-    }
-
-    /**
-     * The url link to the video (absulute or relating)
-     */
-    @Input()
-    set videoUrl(title: string) {
-        this._videoUrl = title;
-    }
-    get videoUrl(): string {
-        return this._videoUrl;
-    }
-
-    /**
-     * The width of the video player area
-     */
-    @Input()
-    set videoWidth(videoWidth: string) {
-        this._videoWidth = videoWidth;
-    }
-    get videoWidth(): string {
-        return this._videoWidth;
-    }
-
-    /**
-     * 
-     */
-    @Input()
-    set targetPercent(percent: number) {
-        this._targetPercent = percent;
-    }
-    get targetPercent(): number {
-        return this._targetPercent;
-    }
-
 }
