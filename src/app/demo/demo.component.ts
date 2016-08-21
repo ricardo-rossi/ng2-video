@@ -8,6 +8,7 @@ import { VideoComponent } from '../video/';
     moduleId: module.id,
     selector: 'video-demo',
     templateUrl: 'demo.component.html',
+    styleUrls: ['demo.component.css'],
     directives : [VideoComponent]
 })
 export class VideoDemoComponent {
@@ -18,13 +19,14 @@ export class VideoDemoComponent {
     _videoUrl: string = 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
     _videoWidth: string = '100%';
     _targetPercent: number = 20.00;
+    eventMessage: string = '';
 
     /**
      * To be triggered when targetPercent is reached
      */
     onTargetComplete(): void {
-        alert('Target Reached!');
-        // Do something useful instead :)
+        // Do something useful        
+        this.eventMessage = `Hey! Target Reached! The Target was ${this._targetPercent}%`;
     }
 
     /**

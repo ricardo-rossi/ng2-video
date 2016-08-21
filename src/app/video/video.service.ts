@@ -29,9 +29,9 @@ export class VideoService {
   }
 
   /**
-   * Plays / Stops the video
+   * Play/Stop the video
    */
-  playVideo() {
+  togglePlay() {
     if (this.videoElement.paused) {
       this.videoElement.play();
       this.isPlaying = true;
@@ -42,15 +42,30 @@ export class VideoService {
   };
 
   /**
-   * Mutes / Unmutes the volume 
+   * Mute/Unmute the volume 
    */
-  muteVideo() {
+  toggleVolume() {
     if (this.videoElement.volume === 0) {
       this.videoElement.volume = 1;
       this.isMuted = false;
     } else {
       this.videoElement.volume = 0;
       this.isMuted = true;
+    }
+  };
+
+  /**
+   * Let's go fullscreen, baby!'
+   */
+  fullScreen() {
+    if (this.videoElement.requestFullscreen) {
+      this.videoElement.requestFullscreen();
+    } else if (this.videoElement.mozRequestFullScreen) {
+      this.videoElement.mozRequestFullScreen();
+    } else if (this.videoElement.webkitRequestFullscreen) {
+      this.videoElement.webkitRequestFullscreen();
+    } else if (this.videoElement.msRequestFullscreen) {
+      this.videoElement.msRequestFullscreen();
     }
   };
 

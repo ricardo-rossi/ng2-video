@@ -1,6 +1,6 @@
 <div id="playerControls">
     <div id="playControl">
-        <a id="playBtn" class="btn btn-default" (click)="videoService.playVideo()">
+        <a id="playBtn" class="btn" (click)="videoService.togglePlay()">
             <i [ngClass]="{'fa-play': !videoService.isPlaying, 'fa-pause': videoService.isPlaying}" class="fa"></i>
         </a>    
         <span id="videoTime">
@@ -10,12 +10,11 @@
         </span>
     </div>
     <div id="volumeControl">    
-        <!--<a><i class="fa fa-volume-off"></i></a>
-        <a><i class="fa fa-volume-down"></i></a>
-        <a><i class="fa fa-volume-up"></i></a>-->
-
-        <a id="muteBtn" class="btn btn-default" (click)="videoService.muteVideo()">        
+        <a id="muteBtn" class="btn" (click)="videoService.toggleVolume()">        
             <i [ngClass]="{'fa-volume-off': videoService.isMuted, 'fa-volume-up': !videoService.isMuted}" class="fa"></i>
+        </a>
+        <a id="fsBtn" (click)="videoService.fullScreen()">
+            <i class="fa fa-expand"></i>
         </a>
     </div>
 </div>

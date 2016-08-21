@@ -1,24 +1,23 @@
-<ng2-video 
-    [url]="videoUrl"
-    [title]="videoTitle"
-    [videoWidth]="videoWidth"
-    [targetPercent]="targetPercent"
-    (targetComplete)="onTargetComplete()"    
-    >Loading Video...</ng2-video>
+<div class="demo" [ngClass]="{'eventMessage': eventMessage != ''}">
+    <ng2-video 
+        [url]="videoUrl" 
+        [title]="videoTitle" 
+        [videoWidth]="videoWidth" 
+        [targetPercent]="targetPercent" 
+        (targetComplete)="onTargetComplete()">Loading Video...</ng2-video>
 
-<!-- Demo of the Video Player-->
-<br/><br/>
-Video Title:<br/>
-<input type="text" size="50" required [(ngModel)]="videoTitle">
+    <!-- Demo of the Video Player-->
+    <br/><br/> Video Title:<br/>
+    <input type="text" size="50" required [(ngModel)]="videoTitle">
 
-<br/><br/>
-Video Url:<br/>
-<input type="text" size="80" required [(ngModel)]="videoUrl">
+    <br/><br/> Video Url:<br/>
+    <input type="text" size="80" required [(ngModel)]="videoUrl">
 
-<br/><br/>
-Video Width:<br/>
-<input type="text" size="40" required [(ngModel)]="videoWidth">
+    <br/><br/> Video Width:<br/>
+    <input type="text" size="40" required [(ngModel)]="videoWidth">
 
-<br/><br/>
-Target for Event Trigger (In Percentages):<br/>
-<input type="number" required [(ngModel)]="targetPercent">%
+    <br/><br/> Target for Event Trigger (In Percentages):<br/>
+    <input type="number" required [(ngModel)]="targetPercent">%
+
+    <div class="eventMessage"><h1>{{eventMessage}}</h1></div>
+</div>
