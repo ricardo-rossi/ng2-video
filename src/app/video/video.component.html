@@ -1,7 +1,7 @@
 <div id="videoPlayer">
-    <video id="videoDisplay"
-        src="{{videoService.currentPath}}"
-        width="500px">
+    <video id="videoDisplay" 
+        src="{{videoService.currentPath}}" 
+        [style.width]="videoService.videoWidth">
     </video>
     <video-controls></video-controls>
     <div id="videoTitle">{{videoService.currentTitle}}</div>
