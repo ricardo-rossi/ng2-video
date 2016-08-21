@@ -1,2 +1,3 @@
-export * from './environment';
-export * from './video';
+export { environment } from './environment';
+export { VideoComponent } from './video';
+export { VideoDemoComponent } from './demo';

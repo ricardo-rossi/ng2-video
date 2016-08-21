@@ -18,8 +18,6 @@ export class VideoService {
     this.videoElement = <HTMLVideoElement>document.getElementById(v);
     this.videoElement.addEventListener('loadedmetadata', this.updateData);
     this.videoElement.addEventListener('timeupdate', this.updateTime);
-    this.currentPath = './demo/myviverae-tutorial-vhms.mp4';
-    this.currentTitle = 'Sample Video';
   }
 
   playVideo() {

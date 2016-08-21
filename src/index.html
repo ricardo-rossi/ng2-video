@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Video</title>
+  <title>Angular 2 Video Component Demo</title>
   <base href="/">
 
   {{#unless environment.production}}
@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
-  <ng2-video>Loading Video...</ng2-video>
+  
+  <video-demo></video-demo>
   
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
