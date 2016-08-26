@@ -8,6 +8,7 @@ export class VideoService {
   public videoElement: any;
   public currentPath: string;
   public currentTitle: string = 'loading...';
+  public posterImage: string = '';
   public videoWidth: string = '100%';
   public currentTime: number = 0;
   public totalTime: number = 0;
@@ -16,6 +17,7 @@ export class VideoService {
   public targetAchieved: boolean = false;
   public isMuted: boolean = false;
   public isPlaying: boolean = false;
+  public isPreloaded: boolean = false;
 
   constructor() { }
 

@@ -4,6 +4,14 @@ import { VideoService } from './video.service';
 
 /**
  * Angular 2 Video Component
+ * 
+ * // STILL COMING: 
+ * - Captions - Using standards (Research)
+ * - Turn Forward/Back on/off
+ * - Scrubbing controls
+ * - Volume control
+ * - Big Play button
+ * 
  */
 @Component({
     moduleId: module.id,
@@ -18,8 +26,12 @@ export class VideoComponent implements OnInit, OnChanges {
     /**
      * Setup properties
      */
+    @Input() allowFullScreen: boolean = true;
+    @Input() allowFastForward: boolean = true;
     @Input() url: string = '';
     @Input() title: string = '';
+    @Input() posterImage: string = '';
+    @Input() isPreloaded: boolean = false;
     @Input() videoWidth: string = '100%';
     @Input() targetPercent: number = 0;
     @Output() targetComplete: EventEmitter<any> = new EventEmitter();
@@ -54,6 +66,8 @@ export class VideoComponent implements OnInit, OnChanges {
         this.videoService.targetPercent = this.targetPercent;
         this.videoService.currentTitle = this.title;
         this.videoService.videoWidth = this.videoWidth;
+        this.videoService.isPreloaded = this.isPreloaded;
+        this.videoService.posterImage = this.posterImage;
     }
 
     /**
@@ -67,6 +81,7 @@ export class VideoComponent implements OnInit, OnChanges {
             if (percentComplete > targetPercent) {
                 this.videoService.targetAchieved = true;
                 this.targetComplete.emit(null);
+                this.allowFastForward = true;
             }
         }
     }

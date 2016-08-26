@@ -1,5 +1,7 @@
 <div id="videoPlayer">
     <video id="videoDisplay" 
+        poster="{{videoService.posterImage}}"
+        preload="{{videoService.isPreloaded}}"
         src="{{videoService.currentPath}}" 
         [style.width]="videoService.videoWidth">
     </video>

@@ -17,17 +17,23 @@ export class VideoDemoComponent {
      */
 
     // The title of the video to be displayed on the header
-    @Input() videoTitle: string = 'Big Buck Bunny';
+    videoTitle: string = 'Big Buck Bunny';
 
     // The url link to the video (absulute or relating)
-    @Input() videoUrl: string = 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
+    videoUrl: string = 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4';
 
     // The width of the video player area
-    @Input() videoWidth: string = '100%';
+    videoWidth: string = '100%';
 
     // target percentage to be triggered is reached
-    @Input() targetPercent: number = 20.00;
+    targetPercent: number = 20.00;
     eventMessage: string = '';
+
+    // Whether you want the video to be preloaded
+    isPreloaded: boolean = false;
+
+    // Poster image to use instead of first video frame
+    posterImage: string = './app/demo/bunny.png';
 
     /**
      * To be triggered when targetPercent is reached
